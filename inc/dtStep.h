@@ -9,6 +9,7 @@
     
 
 // INCLUDES
+#include "Arrays.h"
 #include "symFind.h"
     
 // PRAGMA
@@ -17,20 +18,5 @@
 
 void dtStep(
     const double,
-    const int,
-    const double [],
-    const double [],
-    const double [],
-    const double [],
-    const double [],
-    const double [],
-    double [],
-    double [],
-    double [],
-    double [],
-    double [],
-    double [],
-    double [],
-    double [],
-    double []
+    Arrays &
 );

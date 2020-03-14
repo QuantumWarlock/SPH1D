@@ -1,23 +1,34 @@
 /* *************************************************************************************************
  *
- * Function:	timeIntegrator
- * Purpose:	    Advance the simulation in time.
+ * Class:	    Arrays (C struct with constructor and destructor.)
+ * Purpose:	    Bundle 'O Simulation Arrays.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 12, 2020
+ * Date:	    March 14, 2020
  *
  ***************************************************************************************************/
-    
 
-// INCLUDES
+
 #include "Arrays.h"
-#include "dtStep.h"
+
+
+// Constructor
+Arrays::Arrays()
+{
+
+}
+Arrays::Arrays(const int reqNumPar)
+{
     
-// PRAGMA
-#pragma once 
+}
 
 
-void timeIntegrator(
-    const double,
-    double,
-    Arrays &
-);
+
+
+
+
+
+// Destructor
+Arrays::~Arrays()
+{
+    
+}

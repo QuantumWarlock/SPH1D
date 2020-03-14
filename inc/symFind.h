@@ -9,19 +9,9 @@
     
 
 // INCLUDES
-
+#include "Arrays.h"
 
 
 void symFind(
-    // IN
-    const int,
-    const double [],
-    const double [],
-    // OUT
-    int &,
-    int [],
-    int [],
-    double [],
-    double [],
-    int []
+    Arrays &
 );

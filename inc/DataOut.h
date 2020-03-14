@@ -8,6 +8,7 @@
  ***************************************************************************************************/
 
 // INCLUDES
+#include "Arrays.h"
 #include <cstdlib>
 #include <fstream>
 #include <iomanip>
@@ -31,13 +32,7 @@ public:
 	// Public Member Functions
     void dump(
         const double,
-        const double [], 
-        const double [], 
-        const double [], 
-        const double [], 
-        const double [], 
-        const double [], 
-        const int
+        const Arrays &
     );
 	
 

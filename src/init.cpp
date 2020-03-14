@@ -13,15 +13,7 @@
 
 
 void init(
-    double x[], 
-    double vx[], 
-    double mass[], 
-    double rho[], 
-    double p[], 
-    double ie[], 
-    double h[], 
-    const int &nTot
-    )
+    Arrays &sA )
 {
     std::cout << "\tInitializing Noh Shock Tube Simulation ..." << std::endl;
     /* 
@@ -31,27 +23,28 @@ void init(
      * Number of particles on RHS: 80
      * Number of particles on LHS: 320
      */
+    const int nTot = sA.nTot;
     const double dx = 0.6/80.0;
     const double massInit = 0.75/nTot;
 
     for(int i=0; i<nTot; i++)
     {
-        mass[i] = massInit;
-        h[i] = 0.015;
-        vx[i] = 0.0;
+        sA.mass[i] = massInit;
+        sA.h[i] = 0.015;
+        sA.vx[i] = 0.0;
         if ( i < 320 ) 
         {
-            x[i] = -0.6 + dx*i/4.0;
-            ie[i] = 2.5;
-            rho[i] = 1.0;
-            p[i] = 1.0;
+            sA.x[i] = -0.6 + dx*i/4.0;
+            sA.ie[i] = 2.5;
+            sA.rho[i] = 1.0;
+            sA.p[i] = 1.0;
         }
         else 
         {
-            x[i] = dx*(i-319);
-            ie[i] = 1.795;
-            rho[i] = 0.25;
-            p[i] = 0.1795;
+            sA.x[i] = dx*(i-319);
+            sA.ie[i] = 1.795;
+            sA.rho[i] = 0.25;
+            sA.p[i] = 0.1795;
         }
     }
 }
