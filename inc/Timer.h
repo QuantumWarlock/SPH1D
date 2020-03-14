@@ -10,7 +10,8 @@
 
 // INCLUDES
 #include <iostream>
-#include <chrono>   // includes ctime & sets high_resolution_clock to system_clock
+#include <ctime>
+#include <chrono>   // Sets high_resolution_clock to system_clock
 #include <string>
     
 
@@ -22,7 +23,7 @@ class Timer {
 private:
 	// Begining and ending system times (time stamps)
 	std::string sTimeStampBegin, sTimeStampEnd;
-	std::time_t timeStampBegin, timeStampEnd;
+	time_t timeStampBegin, timeStampEnd;
 	// High resolution total program execution time
 	std::chrono::system_clock::time_point startTime, endTime;
 	std::chrono::duration<double> totalTime;

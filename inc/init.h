@@ -9,6 +9,7 @@
     
 
 // INCLUDES
+#include "Arrays.h"
 #include <iostream>		// Input/Output (streams)
 
     
@@ -17,12 +18,5 @@
 
 
 void init(
-    double [],
-    double [],
-    double [],
-    double [],
-    double [],
-    double [],
-    double [],
-    const int &
+    Arrays &
 );

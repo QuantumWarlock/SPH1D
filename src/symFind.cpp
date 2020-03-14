@@ -12,21 +12,8 @@
 #include "symFind.h"
 
 
-
 void symFind(
-    // IN
-    const int nTot,
-    const double h[],
-    const double x[],
-    // OUT
-    int &nIP,
-    int iIP[],
-    int jIP[],
-    double w[],
-    double dw[],
-    int nNP[] )
+    Arrays &sA )
 {
-
-
 
 }
