@@ -19,7 +19,7 @@ class Arrays
 {
 public:
     static constexpr int maxIP = 100;
-    static constexpr int nTot = 1000;
+    static constexpr int nTot = 400;
 
     // Constructor
     Arrays();
@@ -34,6 +34,7 @@ public:
     int nNP[nTot] = { 0 };
     double x[nTot] = { 0 };           // Particle Position
     double vx[nTot] = { 0 };          // Paricle Velocity
+    double ax[nTot] = { 0 };          // Particle Acceleration
     double mass[nTot] = { 0 };        // Mass
     double rho[nTot] = { 0 };         // Density
     double p[nTot] = { 0 };           // Pressure
@@ -46,10 +47,9 @@ public:
     double dw[maxIP*nTot] = { 0 };    // Soothing Function Derivative
     double vxM[nTot] = { 0 };         // Monoghan Average Velocity
     double tds[nTot] = { 0 };         // Production of Viscous Entropy (t*ds/dt)
-    double ax[nTot] = { 0 };          // Acceleration
     double die[nTot] = { 0 };         // d[ie]/dt
     double ds[nTot] = { 0 };          // ds/dt
-    double drho[nTot] = { 0 };        // d[rho]/dat
+    double drho[nTot] = { 0 };        // d[rho]/dt
     double T[nTot] = { 0 };           // Temperature
 
     // Destructor
