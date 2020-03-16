@@ -2,6 +2,6 @@
 1D Smoothed Particle Hydrodynamics C++ code for simulating the Noh Shock Tube.
 
 Linux:
-'''bash
+```bash
 cmake -S . -B build
-'''
+```
