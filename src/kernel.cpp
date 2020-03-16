@@ -1,19 +1,22 @@
 /* *************************************************************************************************
  *
- * Function:	symFind
- * Purpose:	    Brute force particle search.
+ * Function:	kernel
+ * Purpose:	    AKA Smoothing Function.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 12, 2020
+ * Date:	    March 16, 2020
  *
  ***************************************************************************************************/
-    
 
-// INCLUDES
-#include "Arrays.h"
-#include <cmath>
+
+ // INCLUDE
 #include "kernel.h"
 
 
-void symFind(
-    Arrays &
-);
+void kernel(
+    double r,
+    double dx,
+    double hM,
+    Arrays &sA )
+{
+
+}
