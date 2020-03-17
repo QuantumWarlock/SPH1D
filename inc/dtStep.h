@@ -10,6 +10,7 @@
 
 // INCLUDES
 #include "Arrays.h"
+#include "sumDen.h"
 #include "symFind.h"
     
 // PRAGMA

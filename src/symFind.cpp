@@ -45,7 +45,7 @@ void symFind(
                     sA.nIP++;
                     sA.nNP[i]++;
                     sA.nNP[j]++;
-                    kernel(r, dx, hM, sA);
+                    kernel(r, dx, hM, sA.w[sA.nIP], sA.dw[sA.nIP]);
                 }
             }
         }

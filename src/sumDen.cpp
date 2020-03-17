@@ -1,23 +1,19 @@
 /* *************************************************************************************************
  *
- * Function:	kernel
- * Purpose:	    AKA Smoothing Function.
+ * Function:	sumDen
+ * Purpose:	    Summation Density Approach.
  * Author:	    Ryan Clement (RRCC)
  * Date:	    March 16, 2020
  *
  ***************************************************************************************************/
+    
+
+// INCLUDES
+#include "sumDen.h"
 
 
-// INCLUDE
-#include <cmath>
-#include "constants.h"
-
-#pragma once
-
-
-void kernel(
-    const double,
-    const double,
-    const double,
-    double &,
-    double & );
+void sumDen(
+    Arrays &sA )
+    {
+        
+    }

@@ -1,23 +1,21 @@
 /* *************************************************************************************************
  *
- * Function:	kernel
- * Purpose:	    AKA Smoothing Function.
+ * Namespace:	CON
+ * Purpose:	    Constants for the simulation.
  * Author:	    Ryan Clement (RRCC)
  * Date:	    March 16, 2020
  *
  ***************************************************************************************************/
 
-
-// INCLUDE
 #include <cmath>
-#include "constants.h"
 
 #pragma once
 
-
-void kernel(
-    const double,
-    const double,
-    const double,
-    double &,
-    double & );
+namespace CON
+{
+    constexpr double pi = 3.14159265358979323846;
+    constexpr double sqrtPi = sqrt(pi);
+    constexpr double fourPi = 4.0*pi;
+    constexpr double twoPi = 2.0*pi;
+    constexpr double piSq = pi*pi; 
+}

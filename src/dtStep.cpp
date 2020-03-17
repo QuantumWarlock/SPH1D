@@ -20,4 +20,7 @@ void dtStep(
     // Calculate Neighboring Particles
     symFind(sA);
 
+    // Density Approximation
+    sumDen(sA);
+
 }

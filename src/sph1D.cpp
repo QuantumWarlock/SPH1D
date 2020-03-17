@@ -19,6 +19,7 @@
 #include "DataOut.h"
 #include "init.h"
 #include "gasEOS.h"
+#include "SPH1DConfig.h"
 #include "symFind.h"
 #include "timeIntegrator.h"
 #include "Timer.h"
