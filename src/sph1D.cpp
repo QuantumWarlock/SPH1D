@@ -2,6 +2,9 @@
   *
   * Code:	    sph1D
   * Purpose:	1D Smooth Particle Hydrodynamics Simulation
+  * Credits:    This C++ based code is derived from the FORTRAN in "Smoothed Particle Hydrodynamics a 
+  *             meshfree particle method" by G.R. Liu and M.B. Liu, 2003
+  * Diclaimer:  This code has no warranty or claims of correctness whatsoever. 
   * Author:	    Ryan Clement (RRCC)
   * Date:	    March 10, 2020
   *
@@ -18,11 +21,9 @@
 #include "Arrays.h"
 #include "DataOut.h"
 #include "init.h"
-#include "gasEOS.h"
-#include "symFind.h"
+#include "SPH1DConfig.h"
 #include "timeIntegrator.h"
 #include "Timer.h"
-#include "waterEOS.h"
 
 // NAMESPACES
 

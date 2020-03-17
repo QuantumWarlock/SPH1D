@@ -3,7 +3,7 @@
  * Function:	dtStep
  * Purpose:	    Integrate equations one time step.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 12, 2020
+ * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
     
@@ -19,5 +19,11 @@ void dtStep(
 {
     // Calculate Neighboring Particles
     symFind(sA);
+
+    // Density Approximation
+    sumDen(sA);
+
+    // Artificial Viscosity 
+    artVisc(sA);
 
 }

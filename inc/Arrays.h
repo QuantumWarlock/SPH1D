@@ -3,7 +3,7 @@
  * Class:	    Arrays (C struct with constructor and destructor.)
  * Purpose:	    Bundle 'O Simulation Arrays.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 14, 2020
+ * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
 
@@ -45,6 +45,7 @@ public:
     double te[nTot] = { 0 };          // Total Energy
     double w[maxIP*nTot] = { 0 };     // Smoothing Function
     double dw[maxIP*nTot] = { 0 };    // Soothing Function Derivative
+    //double w0[nTot] = { 0 };          // Kernel at distance 0 (self interaction) for Normalization Density Approach
     double vxM[nTot] = { 0 };         // Monoghan Average Velocity
     double tds[nTot] = { 0 };         // Production of Viscous Entropy (t*ds/dt)
     double die[nTot] = { 0 };         // d[ie]/dt

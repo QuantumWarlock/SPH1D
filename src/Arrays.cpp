@@ -3,7 +3,7 @@
  * Class:	    Arrays (C struct with constructor and destructor.)
  * Purpose:	    Bundle 'O Simulation Arrays.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 14, 2020
+ * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
 
@@ -11,7 +11,7 @@
 #include "Arrays.h"
 
 
-// Constructor
+// Constructors (overloaded)
 Arrays::Arrays()
 {
 
@@ -20,11 +20,6 @@ Arrays::Arrays(const int reqNumPar)
 {
     
 }
-
-
-
-
-
 
 
 // Destructor
