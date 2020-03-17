@@ -14,7 +14,22 @@ set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
 
 include_directories(inc)
-file(GLOB SOURCES "src/*.cpp")
+set(SOURCES 
+        src/Arrays.cpp
+        src/artVisc.cpp
+        src/conDen.cpp
+        src/DataOut.cpp
+        src/dtStep.cpp
+        src/gasEOS.cpp
+        src/init.cpp
+        src/kernel.cpp
+        src/sph1D.cpp
+        src/sumDen.cpp
+        src/symFind.cpp
+        src/timeIntegrator.cpp
+        src/Timer.cpp
+        src/waterEOS.cpp
+)
 configure_file(inc/SPH1DConfig.h.in ../inc/SPH1DConfig.h)
 add_executable(SPH1D.x ${SOURCES})
 

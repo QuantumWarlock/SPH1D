@@ -3,13 +3,14 @@
  * Function:	dtStep
  * Purpose:	    Integrate equations one time step.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 12, 2020
+ * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
     
 
 // INCLUDES
 #include "Arrays.h"
+#include "artVisc.h"
 #include "sumDen.h"
 #include "symFind.h"
     

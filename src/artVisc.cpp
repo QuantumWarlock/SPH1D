@@ -1,22 +1,19 @@
 /* *************************************************************************************************
  *
- * Function:	kernel
- * Purpose:	    AKA Smoothing Function.
+ * Function:	artVisc
+ * Purpose:	    Artificial Viscosity (Monaghan, 1992).
  * Author:	    Ryan Clement (RRCC)
  * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
-
+    
 
 // INCLUDE
-#include <cmath>
-#include "constants.h"
-
-#pragma once
+#include "artVisc.h"
 
 
-void kernel(
-    const double,
-    const double,
-    double &,
-    double & );
+void artVisc(
+    Arrays &sA )
+    {
+        
+    }

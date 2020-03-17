@@ -3,7 +3,7 @@
  * Namespace:	CON
  * Purpose:	    Constants for the simulation.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 16, 2020
+ * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
 

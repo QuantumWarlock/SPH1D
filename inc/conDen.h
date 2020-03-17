@@ -1,22 +1,17 @@
 /* *************************************************************************************************
  *
- * Function:	kernel
- * Purpose:	    AKA Smoothing Function.
+ * Function:	conDen
+ * Purpose:	    Continuity Density Approach.
  * Author:	    Ryan Clement (RRCC)
  * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
+    
 
-
-// INCLUDE
-#include <cmath>
-#include "constants.h"
+// INCLUDES
+#include "Arrays.h"
 
 #pragma once
 
-
-void kernel(
-    const double,
-    const double,
-    double &,
-    double & );
+void conDen(
+    Arrays & );
