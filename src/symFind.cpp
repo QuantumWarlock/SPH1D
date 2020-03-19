@@ -16,8 +16,7 @@ void symFind(
     Arrays &sA )
 {
     const int nTot = sA.nTot;
-    //const int maxA = nTot * sA.maxIP;   // Maximum number of allowed interactions
-    const int maxA = 1;
+    const int maxA = nTot * sA.maxIP;   // Maximum number of allowed interactions
     const int nTotM1 = nTot - 1;
     const int k = 3;                    // Scaling factor for Gaussian Kernel
     double dx = 0.0;                    // 1-D: x = x,          3-D: x = <x,y,z>
