@@ -5,3 +5,7 @@ Linux:
 ```bash
 cmake -S . -B build
 ```
+
+Windows:
+```powershell
+```
