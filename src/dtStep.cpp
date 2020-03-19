@@ -6,11 +6,11 @@
  * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
-    
+
 
 // INCLUDES
 #include "dtStep.h"
-    
+
 
 void dtStep(
     // IN
@@ -23,7 +23,14 @@ void dtStep(
     // Density Approximation
     sumDen(sA);
 
-    // Artificial Viscosity 
+    // Artificial Viscosity
     artVisc(sA);
 
+    // Convert Velocity, Force, and Energy to f and df/dt
+    // ... add components from updates above
+    for(auto i=0; i<sA.nTot; i++)
+    {
+        sA.ax[i] = sA.axAV[i];
+        sA.die[i] += sA.dieAV[i];
+    }
 }
