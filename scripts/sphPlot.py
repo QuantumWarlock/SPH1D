@@ -2,17 +2,48 @@
 # -*- coding: utf-8 -*-
 """
 Created: Wed Mar 10 2020
+Python without class!
 
-@author: Warlock (RRCC)
+@author: Ryan Clement (RRCC)
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
+import argparse
 
 
-def readFile():
-    dataFile = '../build/SPH1D_Output.txt'
-    f = open(dataFile,'r')
+def readFile(fName):
+    """
+
+
+    Returns
+    -------
+    nDumps : TYPE
+        DESCRIPTION.
+    nPars : TYPE
+        DESCRIPTION.
+    times : TYPE
+        DESCRIPTION.
+    x : TYPE
+        DESCRIPTION.
+    vx : TYPE
+        DESCRIPTION.
+    mass : TYPE
+        DESCRIPTION.
+    rho : TYPE
+        DESCRIPTION.
+    p : TYPE
+        DESCRIPTION.
+    ie : TYPE
+        DESCRIPTION.
+    xm : TYPE
+        DESCRIPTION.
+    dx : TYPE
+        DESCRIPTION.
+
+    """
+    print('Opening File: ',fName)
+    f = open(fName,'r')
     times = []
     nDumps = 0
     for lin in f:
@@ -56,6 +87,35 @@ def readFile():
 
 
 def plotData(t,x,vx,mass,rho,p,ie,xm,dx):
+    """
+
+
+    Parameters
+    ----------
+    t : TYPE
+        DESCRIPTION.
+    x : TYPE
+        DESCRIPTION.
+    vx : TYPE
+        DESCRIPTION.
+    mass : TYPE
+        DESCRIPTION.
+    rho : TYPE
+        DESCRIPTION.
+    p : TYPE
+        DESCRIPTION.
+    ie : TYPE
+        DESCRIPTION.
+    xm : TYPE
+        DESCRIPTION.
+    dx : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
     plt.plot(x,x,'.',markersize=0.5,label='X-Position')
     plt.title('Simulation Time = '+t+' s')
     plt.xlabel('Position')
@@ -99,13 +159,47 @@ def plotData(t,x,vx,mass,rho,p,ie,xm,dx):
     plt.legend()
     plt.show()
 
+def getUserOptions():
+    """
 
-def main():
-    nDumps,nPars,t,x,vx,mass,rho,p,ie,xm,dx = readFile()
+
+    Returns
+    -------
+    TYPE
+        DESCRIPTION.
+
+    """
+    parser = argparse.ArgumentParser(
+        description='Welcome to sphPlot help...',
+        epilog='Example:\n>python sphPlot.py -i <input_file>')
+    # Required argument
+    parser.add_argument(
+        '-i',
+        required=True,
+        help="'file/location/SPH1D_Output.txt' is required")
+    return parser.parse_args()
+
+
+def main(args):
+    """
+
+
+    Parameters
+    ----------
+    args : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
+    nDumps,nPars,t,x,vx,mass,rho,p,ie,xm,dx = readFile(args.i)
     for i in np.arange(nDumps):
         print("Plotting Time: ",t[i]," s")
         plotData(t[i],x[i],vx[i],mass[i],rho[i],p[i],ie[i],xm[i],dx[i])
 
 
 if __name__ == '__main__':
-    main()
+    args = getUserOptions()
+    main(args)
