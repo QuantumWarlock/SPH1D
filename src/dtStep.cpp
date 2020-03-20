@@ -15,6 +15,8 @@
 void dtStep(
     // IN
     const double dt,
+    double axAV[],
+    double dieAV[],
     Arrays &sA )
 {
     // Calculate Neighboring Particles
@@ -24,13 +26,13 @@ void dtStep(
     sumDen(sA);
 
     // Artificial Viscosity
-    artVisc(sA);
+    artVisc(axAV,dieAV,sA);
 
     // Convert Velocity, Force, and Energy to f and df/dt
     // ... add components from updates above
     for(auto i=0; i<sA.nTot; i++)
     {
-        sA.ax[i] = sA.axAV[i];
-        sA.die[i] += sA.dieAV[i];
+        sA.ax[i] = axAV[i];
+        sA.die[i] += dieAV[i];
     }
 }

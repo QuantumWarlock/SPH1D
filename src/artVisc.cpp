@@ -13,6 +13,8 @@
 
 
 void artVisc(
+    double axAV[],
+    double dieAV[],
     Arrays &sA )
     {
         int i = 0;
@@ -31,8 +33,8 @@ void artVisc(
         // "Zero" Acceleration and d[internal energy]/dt
         for(auto i=0; i<sA.nTot; i++)
         {
-            sA.axAV[i] = 0.0;
-            sA.dieAV[i] = 0.0;
+            axAV[i] = 0.0;
+            dieAV[i] = 0.0;
         }
 
         // SPH Sum for Artificial Viscosity
@@ -59,16 +61,16 @@ void artVisc(
                 rhoM = (sA.rho[i] + sA.rho[j])/2.0;
                 piv = (CON::beta*uvM - CON::alpha*ssM)*uvM/rhoM;
                 h = -piv*sA.dw[k];
-                sA.axAV[i] += sA.mass[j]*h;
-                sA.axAV[j] -= sA.mass[i]*h;
-                sA.dieAV[i] -= sA.mass[j]*dvx*h;
-                sA.dieAV[j] -= sA.mass[i]*dvx*h;
+                axAV[i] += sA.mass[j]*h;
+                axAV[j] -= sA.mass[i]*h;
+                dieAV[i] -= sA.mass[j]*dvx*h;
+                dieAV[j] -= sA.mass[i]*dvx*h;
             }
         }
 
         // Change of Specific Internal Energy
         for(auto i=0; i<sA.nTot; i++)
         {
-            sA.dieAV[i] *= 0.5;
+            dieAV[i] *= 0.5;
         }
     }

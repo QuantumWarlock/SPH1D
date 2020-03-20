@@ -6,19 +6,21 @@
  * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
-    
+
 
 // INCLUDES
 #include "Arrays.h"
 #include "artVisc.h"
 #include "sumDen.h"
 #include "symFind.h"
-    
+
 // PRAGMA
-#pragma once 
+#pragma once
 
 
 void dtStep(
     const double,
+    double [],
+    double [],
     Arrays &
 );

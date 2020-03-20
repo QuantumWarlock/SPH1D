@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created: Wed Mar 11 2020
+Created: Wed Mar 10 2020
 
 @author: Warlock (RRCC)
 """
@@ -11,66 +11,89 @@ import matplotlib.pyplot as plt
 
 
 def readFile():
-    dataFile = 'SPH1D_Output.txt'
+    dataFile = '../build/SPH1D_Output.txt'
     f = open(dataFile,'r')
-    lin1 = f.readline().split()
-    t = lin1[1]
-    lin2 = f.readline().split()
-    nTot = int(lin2[1])
-    x = np.zeros(nTot)
-    xm = np.zeros(nTot-1)
-    dx = np.zeros(nTot-1)
-    vx = np.zeros(nTot)
-    mass = np.zeros(nTot)
-    rho = np.zeros(nTot)
-    p = np.zeros(nTot)
-    ie = np.zeros(nTot)
-    lin3 = f.readline().split()
-    for ii in np.arange(nTot):
-        lin = f.readline().split()
-        x[ii] = lin[0]
-        vx[ii] = lin[1]
-        mass[ii] = lin[2]
-        rho[ii] = lin[3]
-        p[ii] = lin[4]
-        ie[ii] = lin[5]
+    times = []
+    nDumps = 0
+    for lin in f:
+        if lin.find("DONE") != -1: nDumps += 1
+        if lin.find("NP") != -1: iNP = lin.split()[1]
+    print(nDumps," SPH1D output records found.")
+    print(iNP, " particles used in simulation.") # iNP assumed constant!
+    nPars = int(iNP)
+    x = np.zeros((nDumps,nPars))
+    xm = np.zeros((nDumps,nPars-1))
+    dx = np.zeros((nDumps,nPars-1))
+    vx = np.zeros((nDumps,nPars))
+    mass = np.zeros((nDumps,nPars))
+    rho = np.zeros((nDumps,nPars))
+    p = np.zeros((nDumps,nPars))
+    ie = np.zeros((nDumps,nPars))
+    f.seek(0,0)
+    for i in np.arange(nDumps):
+        lin1 = f.readline().split()
+        t = lin1[1]
+        times.append(t)
+        print("Processing record from time = ",t," s")
+        f.readline()
+        f.readline()
+        j = 0
+        while j < nPars:
+            lin = f.readline()
+            nums = lin.split()
+            x[i][j] = nums[0]
+            vx[i][j] = nums[1]
+            mass[i][j] = nums[2]
+            rho[i][j] = nums[3]
+            p[i][j] = nums[4]
+            ie[i][j] = nums[5]
+            j+=1
+        f.readline()
+        dx[i] = x[i][1:] - x[i][0:-1]
+        xm[i] = (x[i][1:] + x[i][0:-1])/2.0
     f.close()
-    dx = x[1:] - x[0:-1]
-    xm = (x[1:] + x[0:-1])/2.0
-    return x,vx,mass,rho,p,ie,xm,dx
+    return nDumps,nPars,times,x,vx,mass,rho,p,ie,xm,dx
 
-def plotData(x,vx,mass,rho,p,ie,xm,dx):
+
+def plotData(t,x,vx,mass,rho,p,ie,xm,dx):
     plt.plot(x,x,'.',markersize=0.5,label='X-Position')
+    plt.title('Simulation Time = '+t+' s')
     plt.xlabel('Position')
     plt.ylabel('Position')
     plt.legend()
     plt.show()
     plt.plot(xm,dx,'.',markersize=0.5,label='delta-X')
+    plt.title('Simulation Time = '+t+' s')
     plt.xlabel('Position')
     plt.ylabel('delta-X')
     plt.legend()
     plt.show()
     plt.plot(x,vx,'.',markersize=0.5,label='X-Velocity')
+    plt.title('Simulation Time = '+t+' s')
     plt.xlabel('Position')
     plt.ylabel('Velocity')
     plt.legend()
     plt.show()
     plt.plot(x,mass,'.',markersize=0.5,label='Mass')
+    plt.title('Simulation Time = '+t+' s')
     plt.xlabel('Position')
     plt.ylabel('Mass')
     plt.legend()
     plt.show()
     plt.plot(x,rho,'.',markersize=0.5,label='Density')
+    plt.title('Simulation Time = '+t+' s')
     plt.xlabel('Position')
     plt.ylabel('Density')
     plt.legend()
     plt.show()
     plt.plot(x,p,'.',markersize=0.5,label='Pressure')
+    plt.title('Simulation Time = '+t+' s')
     plt.xlabel('Position')
     plt.ylabel('Pressure')
     plt.legend()
     plt.show()
     plt.plot(x,ie,'.',markersize=0.5,label='Internal Energy')
+    plt.title('Simulation Time = '+t+' s')
     plt.xlabel('Position')
     plt.ylabel('Internal Energy')
     plt.legend()
@@ -78,9 +101,11 @@ def plotData(x,vx,mass,rho,p,ie,xm,dx):
 
 
 def main():
-    x,vx,mass,rho,p,ie,xm,dx = readFile()
-    plotData(x,vx,mass,rho,p,ie,xm,dx)
-    
+    nDumps,nPars,t,x,vx,mass,rho,p,ie,xm,dx = readFile()
+    for i in np.arange(nDumps):
+        print("Plotting Time: ",t[i]," s")
+        plotData(t[i],x[i],vx[i],mass[i],rho[i],p[i],ie[i],xm[i],dx[i])
+
 
 if __name__ == '__main__':
     main()

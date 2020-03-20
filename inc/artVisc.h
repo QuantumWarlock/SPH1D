@@ -15,4 +15,6 @@
 #pragma once
 
 void artVisc(
+    double [],
+    double [],
     Arrays & );
