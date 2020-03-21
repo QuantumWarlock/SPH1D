@@ -19,13 +19,13 @@ include(CPack)
 configure_file(inc/SPH1DConfig.h.in ../inc/SPH1DConfig.h)
 include_directories(inc)
 set(SOURCES
-        src/Arrays.cpp
         src/artVisc.cpp
         src/conDen.cpp
         src/DataOut.cpp
         src/dtStep.cpp
         src/gasEOS.cpp
         src/init.cpp
+        src/internalForces.cpp
         src/kernel.cpp
         src/sph1D.cpp
         src/sumDen.cpp

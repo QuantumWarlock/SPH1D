@@ -6,10 +6,11 @@
  * Date:	    March 12, 2020
  *
  ***************************************************************************************************/
-    
+
 
 // INCLUDES
 #include "gasEOS.h"
+#include <cmath>
 
 
 void gasEOS(
@@ -19,8 +20,8 @@ void gasEOS(
     // OUT
     double &p,
     double &ss )
-    {
-        double gammaM1 = 0.4;   // gamma = 1.4
-        p = gammaM1*rho*ie;
-        ss = sqrt( gammaM1*ie );
-    }
+{
+    double gammaM1 = 0.4;   // gamma = 1.4
+    p = gammaM1*rho*ie;
+    ss = sqrt( gammaM1*ie );
+}

@@ -11,6 +11,7 @@
 // INCLUDES
 #include "Arrays.h"
 #include "artVisc.h"
+#include "internalForces.h"
 #include "sumDen.h"
 #include "symFind.h"
 
@@ -20,6 +21,7 @@
 
 void dtStep(
     const double,
+    double [],
     double [],
     double [],
     Arrays &

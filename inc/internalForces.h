@@ -1,29 +1,22 @@
 /* *************************************************************************************************
  *
- * Class:	    Arrays (C struct with constructor and destructor.)
- * Purpose:	    Bundle 'O Simulation Arrays.
+ * Function:	internalForces
+ * Purpose:	    Calculate internal forces for Euler Equations.
  * Author:	    Ryan Clement (RRCC)
  * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
 
 
+// INCLUDES
 #include "Arrays.h"
+#include "gasEOS.h"
 
 
-// Constructors (overloaded)
-Arrays::Arrays()
-{
-
-}
-Arrays::Arrays(const int reqNumPar)
-{
-    
-}
+#pragma once
 
 
-// Destructor
-Arrays::~Arrays()
-{
-    
-}
+void internalForces(
+    double [],
+    Arrays &
+);

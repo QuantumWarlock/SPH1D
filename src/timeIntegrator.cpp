@@ -3,7 +3,7 @@
  * Function:	timeIntegrator
  * Purpose:	    Advance the simulation in time.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 12, 2020
+ * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
 
@@ -19,16 +19,15 @@ void timeIntegrator(
     Arrays &sA)
     {
         double time = t;
-        double tmp0 = 0.0;
-        double tmp1 = 0.0;
         constexpr int nTot = sA.nTot;
         double ieMin[nTot] = { 0.0 };
         double vxMin[nTot] = { 0.0 };
         double axAV[nTot] = { 0.0 };        // Artificial Viscosity Particle Acceleration
         double dieAV[nTot] = { 0.0 };       // Artificial Viscosity d[ie]/dt
+        double axIF[nTot] = { 0.0 };        // Internal Energy Particle Acceleration
 
         // "Leap Frog" Integration
-        dtStep(dt,axAV,dieAV,sA);
+        dtStep(dt,axAV,dieAV,axIF,sA);
         time += dt;
         for(auto i=0; i<nTot; i++)
         {
@@ -61,7 +60,7 @@ void timeIntegrator(
                 vxMin[i] = sA.vx[i];
                 sA.vx[i] += dt*sA.ax[i]/2.0;
             }
-            dtStep(dt,axAV,dieAV,sA);
+            dtStep(dt,axAV,dieAV,axIF,sA);
             for(auto i=0; i<nTot; i++)
             {
                 sA.ie[i] = ieMin[i] + dt*sA.die[i];
