@@ -10,7 +10,6 @@
 
 // INCLUDES
 #include "gasEOS.h"
-#include <cmath>
 
 
 void gasEOS(
@@ -21,7 +20,6 @@ void gasEOS(
     double &p,
     double &ss )
 {
-    double gammaM1 = 0.4;   // gamma = 1.4
-    p = gammaM1*rho*ie;
-    ss = sqrt( gammaM1*ie );
+    p = CON::gammaM1*rho*ie;
+    ss = sqrt( CON::gammaM1*ie );
 }

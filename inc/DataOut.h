@@ -3,23 +3,24 @@
  * Class:	DataOut
  * Purpose:	Output simulation results to file.
  * Author:	Ryan Clement (RRCC)
- * Date:	March 11, 2020
+ * Date:	March 10, 2020
  *
  ***************************************************************************************************/
 
+
 // INCLUDES
-#include "Arrays.h"
-#include <cstdlib>
-#include <fstream>
+#include "constants.h"
 #include <iomanip>
 #include <iostream>
+#include <fstream>
+#include <stdexcept>
 #include <string>
 
 // PRAGMA
 #pragma once
 
 
-class DataOut 
+class DataOut
 {
 private:
 	std::ofstream fileOut;
@@ -28,13 +29,16 @@ public:
 	// Constructor
 	DataOut();
 
-
 	// Public Member Functions
     void dump(
         const double,
-        const Arrays &
+        const double [],
+    	const double [],
+    	const double [],
+    	const double [],
+    	const double [],
+    	const double []
     );
-	
 
 	// Destructor
 	~DataOut();

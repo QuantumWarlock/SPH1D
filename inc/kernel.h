@@ -18,5 +18,6 @@
 void kernel(
     const double,
     const double,
+    const double,
     double &,
     double & );

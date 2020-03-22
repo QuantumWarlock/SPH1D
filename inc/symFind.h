@@ -9,7 +9,6 @@
 
 
 // INCLUDES
-#include "Arrays.h"
 #include <cmath>
 #include <iostream>
 #include "kernel.h"
@@ -17,5 +16,12 @@
 
 
 void symFind(
-    Arrays &
+    const double [],
+    const double [],
+    int [],
+    int [],
+    double [],
+    double [],
+    int [],
+    int &
 );

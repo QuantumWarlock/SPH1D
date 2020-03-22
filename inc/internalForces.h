@@ -9,7 +9,8 @@
 
 
 // INCLUDES
-#include "Arrays.h"
+#include <cmath>
+#include "constants.h"
 #include "gasEOS.h"
 
 
@@ -17,6 +18,20 @@
 
 
 void internalForces(
+    const double,
+    const double [],
+    const double [],
+    const double [],
+    const int,
+    const double [],
+    const int [],
+    const int [],
+    const double [],
+    const double [],
+    const double [],
     double [],
-    Arrays &
+    double [],
+    double [],
+    double [],
+    double []
 );

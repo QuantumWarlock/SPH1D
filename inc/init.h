@@ -9,6 +9,7 @@
 
 
 // INCLUDES
+#include "constants.h"
 #include <iostream>		// Input/Output (streams)
 
 
@@ -17,5 +18,11 @@
 
 
 void init(
-    Arrays &
+    double [],
+    double [],
+    double [],
+    double [],
+    double [],
+    double [],
+    double []
 );

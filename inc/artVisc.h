@@ -9,12 +9,24 @@
 
 
 // INCLUDES
-#include "Arrays.h"
 #include "constants.h"
+
 
 #pragma once
 
+
 void artVisc(
+    const double [],
+    const double [],
+    const double [],
+    const double [],
+    const int,
+    const double [],
+    const double [],
+    const int [],
+    const int [],
+    const double [],
+    const double [],
     double [],
-    double [],
-    Arrays & );
+    double []
+);

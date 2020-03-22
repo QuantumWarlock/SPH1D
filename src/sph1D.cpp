@@ -23,7 +23,7 @@
 #include <string>		// Strings
 
 // SPH Code Base INCLUDES
-#include "Arrays.h"
+#include "constants.h"
 #include "DataOut.h"
 #include "init.h"
 #include "SPH1DConfig.h"
@@ -43,47 +43,36 @@ int main()
 
 
     // Time Parameters
-    double t = 0.0;                 // Time [s]
-    double dt = 0.005;              // Time Step [s]
-    double tMax = 0.20;             // Maximum Simulation Time [s] (Simulation stop condition)
-
-    // Array Size Parameters
-    constexpr int maxIP = 100;
-    constexpr int nTot = 400;
-    constexpr int maxSZ = maxIP*nTot;
+    double t = 0.0;         // Time [s]
+    double dt = 0.005;      // Time Step [s]
+    double tMax = 0.20;     // Maximum Simulation Time [s] (Simulation stop condition)
 
     // Simulation Arrays
-    int     iIP[maxSZ] = { 0 };
-    int     jIP[maxSZ] = { 0 };
-    int     nNP[nTot] = { 0 };
-    double  w[maxSZ] = { 0.0 };          // Smoothing Function
-    double  dw[maxSZ] = { 0.0 };         // Soothing Function Derivative
-    double  x[nTot] = { 0.0 };           // Particle Position
-    double  vx[nTot] = { 0.0 };          // Paricle Velocity
-    double  ax[nTot] = { 0.0 };          // Particle Acceleration
-    double  mass[nTot] = { 0.0 };        // Mass
-    double  rho[nTot] = { 0.0 };         // Density
-    double  drho[nTot] = { 0.0 };        // d[rho]/dt
-    double  p[nTot] = { 0.0 };           // Pressure
-    double  T[nTot] = { 0.0 };           // Temperature
-    double  ie[nTot] = { 0.0 };          // Internal Energy
-    double  die[nTot] = { 0.0 };         // d[ie]/dt
-    double  te[nTot] = { 0.0 };          // Total Energy
-    double  h[nTot] = { 0.0 };           // Smoothing Length
-    double  ss[nTot] = { 0.0 };          // Sound Speed (normally called "c")
+    double  x[CON::nTot]    = { 0.0 };  // Particle Position
+    double  vx[CON::nTot]   = { 0.0 };  // Paricle Velocity
+    double  ax[CON::nTot]   = { 0.0 };  // Particle Acceleration
+    double  mass[CON::nTot] = { 0.0 };  // Mass
+    double  rho[CON::nTot]  = { 0.0 };  // Density
+    double  p[CON::nTot]    = { 0.0 };  // Pressure
+    double  T[CON::nTot]    = { 0.0 };  // Temperature
+    double  ie[CON::nTot]   = { 0.0 };  // Internal Energy
+    double  te[CON::nTot]   = { 0.0 };  // Total Energy
+    double  h[CON::nTot]    = { 0.0 };  // Smoothing Length
+    double  ss[CON::nTot]   = { 0.0 };  // Sound Speed (normally called "c")
+    double  s[CON::nTot]    = { 0.0 };  // Entropy
 
     // Simulation Output
     DataOut *dOut = new DataOut;
 
     // Initialize Problem
-    init(simArr);
-    dOut->dump(t,simArr);
+    init(x, vx, mass, rho, p, ie, h);
+    dOut->dump(t, x, vx, mass, rho, p, ie);
 
     std::cout << "\tStart Time: " << t << " s" << std::endl;
     // Time Integration
-    timeIntegrator(tMax,dt,t,simArr);
+    timeIntegrator(tMax, dt, t, x, vx, ax, mass, rho, p, ie, ss, s, te, h, T);
     std::cout << "\tStop Time: " << t << " s" << std::endl;
-    dOut->dump(t,simArr);
+    dOut->dump(t, x, vx, mass, rho, p, ie);
 
 	// Final Time Stamp
 	timer->end();
