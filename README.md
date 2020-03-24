@@ -1,7 +1,7 @@
 # SPH1D
 1D Smoothed Particle Hydrodynamics C++ code for simulating the Noh Shock Tube.
 
-## Linux:
+## Linux: SPH1D.x
 
 **Build:**
 ```bash
@@ -11,7 +11,7 @@ cmake -S . -B build
 ```bash
 ```
 
-## Windows:
+## Windows:SPH1D.exe
 
 **Build:**
 ```powershell
