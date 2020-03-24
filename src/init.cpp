@@ -32,7 +32,7 @@ void init(double x[], double vx[], double mass[], double rho[], double p[], doub
     for(auto i=0; i<CON::nTot; i++)
     {
         mass[i] = massInit;
-        h[i] = 0.015;
+        h[i] = 0.03;       // L&L 0.015
         vx[i] = 0.0;
         if ( i < 320 )
         {

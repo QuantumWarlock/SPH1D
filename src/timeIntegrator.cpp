@@ -27,7 +27,8 @@ void timeIntegrator(
     double s[],
     double te[],
     double h[],
-    double T[] )
+    double T[],
+    DataOut *dOut )
     {
         int     iTime = 0;
         int     iIP[CON::maxSZ]   = { 0 };   // First Particle of Interaction Pair
@@ -47,8 +48,7 @@ void timeIntegrator(
         // "Leapfrog" Integration Scheme
         dtStep(iTime, dt, h, mass, x, vx, ie, rho, p, ax, die, drho, T, ss,
                iIP, jIP, nNP, w, dw, axAV, dieAV, axIF);
-        t += dt;
-        iTime++;
+
         for(auto i=0; i<CON::nTot; i++)
         {
             // Update Internal Energy 1/2 time step
@@ -59,9 +59,12 @@ void timeIntegrator(
             // Update Position
             x[i] += dt*vx[i];
         }
+        t += dt;
+        iTime++;
 
         while( t <= tMax )
         {
+            dOut->dump(t, x, vx, mass, rho, p, ie);
             for(auto i=0; i<CON::nTot; i++)
             {
                 // Update Internal Energy 1/2 time step

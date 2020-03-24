@@ -10,6 +10,7 @@
 
 // INCLUDES
 #include "constants.h"
+#include "DataOut.h"
 #include "dtStep.h"
 
 
@@ -32,5 +33,6 @@ void timeIntegrator(
     double [],
     double [],
     double [],
-    double []
+    double [],
+    DataOut *
 );

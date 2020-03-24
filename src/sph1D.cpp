@@ -45,7 +45,7 @@ int main()
     // Time Parameters
     double t = 0.0;         // Time [s]
     double dt = 0.005;      // Time Step [s]
-    double tMax = 0.20;     // Maximum Simulation Time [s] (Simulation stop condition)
+    double tMax = 0.15;     // Maximum Simulation Time [s] (Simulation stop condition)
 
     // Simulation Arrays
     double  x[CON::nTot]    = { 0.0 };  // Particle Position
@@ -70,7 +70,7 @@ int main()
 
     std::cout << "\tStart Time: " << t << " s" << std::endl;
     // Time Integration
-    timeIntegrator(tMax, dt, t, x, vx, ax, mass, rho, p, ie, ss, s, te, h, T);
+    timeIntegrator(tMax, dt, t, x, vx, ax, mass, rho, p, ie, ss, s, te, h, T, dOut);
     std::cout << "\tStop Time: " << t << " s" << std::endl;
     dOut->dump(t, x, vx, mass, rho, p, ie);
 
