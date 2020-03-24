@@ -1,4 +1,4 @@
-# SPH1D_CPP
+# SPH1D
 1D Smoothed Particle Hydrodynamics C++ code for simulating the Noh Shock Tube.
 
 Linux:
