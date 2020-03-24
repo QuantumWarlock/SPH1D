@@ -11,15 +11,21 @@ cmake -S . -B build
 ```bash
 ```
 
-Scripts:
+## Windows:
 
-sphPlot.py
+**Build:**
+```powershell
+```
 
-Run:
+## Scripts:
+
+### sphPlot.py
+
+**Execute:**
 ```bash
 python3 sphPlot.py -i path/to/SPH1D_Output.txt
 ```
-Help:
+**Help:**
 ```bash
 python3 sphPlot.py -h
 ```
@@ -28,19 +34,8 @@ or
 python3 sphPlot.py --help
 ```
 
-## Windows:
-
-**Build:**
-```powershell
-```
-
-Scripts:
-
-sphPlot.py
-
-**Run:**
-```powershell
-```
-**Help:**
-```powershell
+### gasEOS.py
+**Execute:**
+```bash
+python3 gasEOS.py
 ```
