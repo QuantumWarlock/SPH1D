@@ -6,10 +6,9 @@
  * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
-    
+
 
 // INCLUDES
-#include "Arrays.h"
 #include "kernel.h"
 
 
@@ -17,5 +16,11 @@
 
 
 void sumDen(
-    Arrays &
+    const double [],
+    const double [],
+    const int,
+    const int [],
+    const int [],
+    const double [],
+    double []
 );

@@ -3,21 +3,36 @@
  * Function:	timeIntegrator
  * Purpose:	    Advance the simulation in time.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 12, 2020
+ * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
-    
+
 
 // INCLUDES
-#include "Arrays.h"
+#include "constants.h"
+#include "DataOut.h"
 #include "dtStep.h"
-    
+
+
 // PRAGMA
-#pragma once 
+#pragma once
 
 
 void timeIntegrator(
     const double,
     double,
-    Arrays &
+    double &,
+    double [],
+    double [],
+    double [],
+    double [],
+    double [],
+    double [],
+    double [],
+    double [],
+    double [],
+    double [],
+    double [],
+    double [],
+    DataOut *
 );

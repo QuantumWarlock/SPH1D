@@ -6,46 +6,63 @@
  * Date:	    March 10, 2020
  *
  ***************************************************************************************************/
-    
+
 
 // INCLUDES
 #include "symFind.h"
 
 
 void symFind(
-    Arrays &sA )
+    const double h[],
+    const double x[],
+    int iIP[],
+    int jIP[],
+    double w[],
+    double dw[],
+    int nNP[],
+    int &nIP
+    )
 {
-    const int nTot = sA.nTot;
-    const int maxA = nTot * sA.maxIP;   // Maximum number of allowed interactions
-    const int nTotM1 = nTot - 1;
     const int k = 3;                    // Scaling factor for Gaussian Kernel
     double dx = 0.0;                    // 1-D: x = x,          3-D: x = <x,y,z>
     double r = 0.0;                     // 1-D: r = abs(dx),    3-D: r = |dx|
     double hM = 0.0;                    // Average h (Monaghan)
 
-    sA.nIP = 0;
-    for (int i=0; i<nTot; i++)
+    nIP = 0;
+    for (auto i=0; i<CON::nTot; i++)
     {
-        sA.nNP[i] = 0.0;
+        nNP[i] = 0;
     }
 
-    for (int i=0; i<nTotM1; i++)
+    for (auto i=0; i<CON::nTot - 1; i++)
     {
-        for (int j=i+1; j < nTot; j++)
+        for (auto j=i+1; j < CON::nTot; j++)
         {
-            dx = sA.x[i] - sA.x[j];
+            dx = x[i] - x[j];
             r = fabs(dx);
-            hM = (sA.h[i] + sA.h[j]) / 2.0;
+            hM = (h[i] + h[j]) / 2.0;
             if (r < k * hM)
             {
-                if (sA.nIP <= maxA)
+                try
                 {
-                    sA.iIP[sA.nIP] = i;
-                    sA.jIP[sA.nIP] = j;
-                    sA.nIP++;
-                    sA.nNP[i]++;
-                    sA.nNP[j]++;
-                    kernel(r, hM, sA.w[sA.nIP], sA.dw[sA.nIP]);
+                    if (nIP < CON::maxSZ)
+                    {
+                        iIP[nIP] = i;
+                        jIP[nIP] = j;
+                        nIP++;
+                        nNP[i]++;
+                        nNP[j]++;
+                        kernel(r, dx, hM, w[nIP], dw[nIP]);
+                    }
+                    else
+                    {
+                        throw std::out_of_range("Interacting particle limit exceeded!");
+                    }
+                }
+                catch (std::out_of_range& e)
+                {
+                    std::cerr << e.what() << std::endl;
+                    std::terminate();
                 }
             }
         }

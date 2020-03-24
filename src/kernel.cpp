@@ -14,23 +14,18 @@
 
 void kernel(
     const double r,
+    const double dx,
     const double hM,
     double &w,
     double &dw )
 {
     const double factor = 1.0/(hM*CON::sqrtPi);
     const double q = r/hM;
-    const double qMin = 1.0e-9;
 
-    if ( (q > qMin) && (q <= 3.0) )   // NOTE: May adjust 1.0e-9 to be smaller in the future.
+    if ( (q > 0) && (q <= 3.0) )
     {
         w = factor*exp(-q*q);
-        dw = -2.0*q*w;
-    }
-    else if ( q <= qMin )
-    {
-        w = factor;
-        dw = -2.0*q*factor;
+        dw = -2.0*w*dx/(hM*hM);
     }
     else
     {
