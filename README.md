@@ -16,6 +16,7 @@ Python Scripts:
 scripts/sphPlot.py
 
 Linux (e.g. Bash Shell):
+
 Run:
 ```bash
 python3 sphPlot.py -i path/to/SPH1D_Output.txt
@@ -24,15 +25,17 @@ Help:
 ```bash
 python3 sphPlot.py -h
 ```
-- or -
+or
 ```bash
 python3 sphPlot.py --help
 ```
 
 Windows (e.g. PowerShell):
+
 Run:
 ```powershell
 ```
+
 Help:
 ```powershell
 ```
