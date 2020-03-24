@@ -11,7 +11,7 @@ cmake -S . -B build
 ```bash
 ```
 
-## Windows:SPH1D.exe
+## Windows: SPH1D.exe
 
 **Build:**
 ```powershell
