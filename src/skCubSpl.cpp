@@ -9,7 +9,7 @@
 
 
  // INCLUDE
-#include "skCUBSPL.h"
+#include "skCubSpl.h"
 
 
 void skCubSpl(
