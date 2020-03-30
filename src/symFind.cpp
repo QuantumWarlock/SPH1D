@@ -53,8 +53,8 @@ void symFind(
                         nIP++;
                         nNP[i]++;
                         nNP[j]++;
-                        skGauss(r, dx, hM, w[nIP], dw[nIP]);
-                        //skCubSpl(r, dx, hM, w[nIP], dw[nIP]);
+                        //skGauss(r, dx, hM, w[nIP], dw[nIP]);
+                        skCubSpl(r, dx, hM, w[nIP], dw[nIP]);
                     }
                     else
                     {
