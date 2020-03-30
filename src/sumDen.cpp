@@ -32,8 +32,8 @@ void sumDen(
     // Density Integration
     for(auto k=0; k<CON::nTot; k++)
     {
-        skGauss(r0, dw0, h[k], w0, dw0);
-        //skCubSpl(r0, dw0, h[k], w0, dw0);
+        //skGauss(r0, dw0, h[k], w0, dw0);
+        skCubSpl(r0, dw0, h[k], w0, dw0);
         rho[k] = w0*mass[k];
     }
 

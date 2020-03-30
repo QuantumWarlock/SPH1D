@@ -9,7 +9,7 @@
 
 
 // INCLUDES
-#include "skCUBSPL.h"
+#include "skCubSpl.h"
 #include "skGauss.h"
 
 
