@@ -11,7 +11,7 @@
   * Cite:       Please properly cite this code and/or any portion used.
   * Author:	    Ryan Clement (RRCC)
   *             scisoft@outlook.com
-  * Date:	    March 10, 2020
+  * Date:	    March 2020
   *
   ***************************************************************************************************/
 
@@ -43,9 +43,9 @@ int main()
 
 
     // Time Parameters
-    double t = 0.0;         // Time [s]
-    double dt = 0.005;      // Time Step [s]
-    double tMax = 0.15;     // Maximum Simulation Time [s] (Simulation stop condition)
+    double t = 0.0;        // Time [s]
+    double dt = 0.0005;    //Time Step [s]
+    double tMax = 0.2;     // Maximum Simulation Time [s] (Simulation stop condition)
 
     // Simulation Arrays
     double  x[CON::nTot]    = { 0.0 };  // Particle Position

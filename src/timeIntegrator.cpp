@@ -3,7 +3,7 @@
  * Function:	timeIntegrator
  * Purpose:	    Advance the simulation in time.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 10, 2020
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
 
@@ -45,7 +45,8 @@ void timeIntegrator(
         double  dieAV[CON::nTot]  = { 0.0 }; // Artificial Viscosity d[ie]/dt
         double  axIF[CON::nTot]   = { 0.0 }; // Internal Energy Particle Acceleration
 
-        // "Leapfrog" Integration Scheme
+        // "kick-drift-kick" variant "Leapfrog" Integration Scheme
+        // "kick-drift-kick" is used to support the potential for variable timestepping.
         dtStep(iTime, dt, h, mass, x, vx, ie, rho, p, ax, die, drho, T, ss,
                iIP, jIP, nNP, w, dw, axAV, dieAV, axIF);
 

@@ -3,7 +3,7 @@
  * Namespace:	CON
  * Purpose:	    Constants for the simulation.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 10, 2020
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
 
@@ -25,9 +25,9 @@ namespace CON
     constexpr double piSq   = pi*pi;
 
     // ARTIFICIAL VISCOSITY
-    constexpr double alpha  = 1.0e0;
-    constexpr double beta   = 1.0e0;
-    constexpr double etq    = 1.0e-1;
+    constexpr double alpha  = 1.0;
+    constexpr double beta   = 1.0;
+    constexpr double etq    = 0.1;
 
     // GAS EOS
     constexpr double gammaM1 = 0.4;   // gamma = 1.4

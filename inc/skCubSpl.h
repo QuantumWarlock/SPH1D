@@ -1,17 +1,23 @@
 /* *************************************************************************************************
  *
- * Function:	waterEOS
- * Purpose:	    "Special" Equation Of State for Artifical Compressibility of Water.
+ * Function:	skCubSpl
+ * Purpose:	    Cubic Spline Smoothing Kernel (W4? Monaghan 1985).
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 12, 2020
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
 
 
-// INCLUDES
+// INCLUDE
+#include <cmath>
 
 
-void waterEOS(
+#pragma once
+
+
+void skCubSpl(
+    const double,
+    const double,
     const double,
     double &,
     double &

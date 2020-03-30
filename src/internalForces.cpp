@@ -3,7 +3,7 @@
  * Function:	internalForces
  * Purpose:	    Calculate internal forces for Euler Equations.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 10, 2020
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
 
@@ -50,7 +50,7 @@ void internalForces(
     }
 
     // SPH sum for Pressure Force and Internal Energy Change
-    for(int k=0; k<nIP; k++)
+    for(auto k=0; k<nIP; k++)
     {
         i = iIP[k];
         j = jIP[k];

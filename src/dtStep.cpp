@@ -3,7 +3,7 @@
  * Function:	dtStep
  * Purpose:	    Integrate equations one time step.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 10, 2020
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
 
@@ -43,6 +43,7 @@ void dtStep(
     int nIP = 0;
     for(auto i=0; i<CON::nTot; i++)
     {
+        die[i] = 0.0;
         dieAV[i] = 0.0;
         axAV[i] = 0.0;
         axIF[i] = 0.0;
@@ -62,7 +63,7 @@ void dtStep(
 
     // Convert Velocity, Force, and Energy to f and df/dt
     // ... add components from updates above
-    for(auto i=0; i<CON::nTot; i++)
+    for(auto i=1; i<CON::nTot-1; i++)
     {
         ax[i] = axAV[i] + axIF[i];
         die[i] += dieAV[i];

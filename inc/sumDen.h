@@ -3,13 +3,14 @@
  * Function:	sumDen
  * Purpose:	    Summation Density Approach.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 10, 2020
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
 
 
 // INCLUDES
-#include "kernel.h"
+#include "skCUBSPL.h"
+#include "skGauss.h"
 
 
 #pragma once

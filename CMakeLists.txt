@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 
 project(SPH1D VERSION 0.1.0
-        DESCRIPTION "Noh Shock Tube"
+        DESCRIPTION "Shock Tube"
         LANGUAGES CXX)
 
 # Specify the C++ standard
@@ -26,7 +26,8 @@ set(SOURCES
         src/gasEOS.cpp
         src/init.cpp
         src/internalForces.cpp
-        src/kernel.cpp
+        src/skCubSpl.cpp
+        src/skGauss.cpp
         src/sph1D.cpp
         src/sumDen.cpp
         src/symFind.cpp
