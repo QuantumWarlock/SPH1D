@@ -14,16 +14,25 @@ Recommend "out of source" build.
 ```
 **Run:**
 ```bash
->./sph.x
+>./SPH1D.x
 ```
 
-## Windows: SPH1D.exe
+## Windows 10: SPH1D.exe
 
 **Build:**
 ```powershell
 Powershell works fine. However, paths can get very long etc...
 ```
 I recommend Visual Studio Code (a.k.a. VS Code) or Visual Studio. I tested both Visual Studio Community 2019 (16.5.1) and VS Code (1.43.2) using Microsoft's Visual C++ compiler. If you are fully committed to Windows then I recommend Visual Studio (and learn to love JSON). If you want work on Linux and Windows I recommend VS Code. 
+
+**Run:**
+```powershell
+>.\SPH1D.exe
+```
+Again, Powershell works fine. However, as above, using either of the Visual Studio products is really the way to go on Windows especially if debugging. Also, as above, VS Code works on both Linux and Windows (so guess what I use ...).
+
+## macOS: SPH1D.x
+TBD
 
 ## Scripts:
 
