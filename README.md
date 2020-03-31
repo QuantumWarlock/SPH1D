@@ -3,15 +3,22 @@
 
 ## Linux: SPH1D.x
 
-**Build:**
-
-Recommend "out of source" build. 
+Recommend "out of source" build.
+**Release Build:**
 ```bash
 >mkdir build
 >cd build
->cmake /path/to/dir/with/CMakeLists.txt/in/it
+>cmake -DCMAKE_BUILD_TYPE=Release /path/to/dir/with/CMakeLists.txt/in/it
 >make
 ```
+**Debug Build:**
+```bash
+>mkdir build
+>cd build
+>cmake -DCMAKE_BUILD_TYPE=Debug /path/to/dir/with/CMakeLists.txt/in/it
+>make
+```
+
 **Run:**
 ```bash
 >./SPH1D.x
