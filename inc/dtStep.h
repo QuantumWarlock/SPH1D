@@ -3,7 +3,7 @@
  * Function:	dtStep
  * Purpose:	    Integrate equations one time step.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 10, 2020
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
 

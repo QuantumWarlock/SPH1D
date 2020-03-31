@@ -1,20 +1,24 @@
 /* *************************************************************************************************
  *
- * Function:   conDen
- * Purpose:    Continuity Density Approach.
- * Author:     Ryan Clement (RRCC)
- * Date:       March 10, 2020
- * NOTE:       Currently unused and not fully implemented (FUTURE CAPABILITY)
+ * Function:	skGauss
+ * Purpose:	    Gaussian Smoothing Kernel.
+ * Author:	    Ryan Clement (RRCC)
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
 
 
-// INCLUDES
+// INCLUDE
+#include <cmath>
 #include "constants.h"
 
 
 #pragma once
 
 
-void conDen(
-);
+void skGauss(
+    const double,
+    const double,
+    const double,
+    double &,
+    double & );

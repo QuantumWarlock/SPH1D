@@ -1,27 +1,24 @@
 /* *************************************************************************************************
  *
- * Function:	sumDen
- * Purpose:	    Summation Density Approach.
+ * Function:	skCubSpl
+ * Purpose:	    Cubic Spline Smoothing Kernel (W4? Monaghan 1985).
  * Author:	    Ryan Clement (RRCC)
  * Date:	    March 2020
  *
  ***************************************************************************************************/
 
 
-// INCLUDES
-#include "skCubSpl.h"
-#include "skGauss.h"
+// INCLUDE
+#include <cmath>
 
 
 #pragma once
 
 
-void sumDen(
-    const double [],
-    const double [],
-    const int,
-    const int [],
-    const int [],
-    const double [],
-    double []
+void skCubSpl(
+    const double,
+    const double,
+    const double,
+    double &,
+    double &
 );

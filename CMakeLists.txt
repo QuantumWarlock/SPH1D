@@ -1,12 +1,16 @@
 cmake_minimum_required(VERSION 3.0.0)
 
 project(SPH1D VERSION 0.1.0
-        DESCRIPTION "Noh Shock Tube"
+        DESCRIPTION "Shock Tube"
         LANGUAGES CXX)
 
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Specify the build type
+set(CMAKE_BUILD_TYPE RELEASE)
+set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS_RELEASE})
 
 # Future Testing Capability ...
 include(CTest)
@@ -26,7 +30,8 @@ set(SOURCES
         src/gasEOS.cpp
         src/init.cpp
         src/internalForces.cpp
-        src/kernel.cpp
+        src/skCubSpl.cpp
+        src/skGauss.cpp
         src/sph1D.cpp
         src/sumDen.cpp
         src/symFind.cpp
@@ -47,10 +52,12 @@ endif()
 # Print some CMake Variables for the User
 message("CMAKE_HOST_SYSTEM_NAME = " ${CMAKE_HOST_SYSTEM_NAME})
 message("CMAKE_CXX_COMPILER_ID = " ${CMAKE_CXX_COMPILER_ID})
+message("CMAKE_BUILD_TYPE = " ${CMAKE_BUILD_TYPE})
+message("CMAKE_CXX_FLAGS = " ${CMAKE_CXX_FLAGS})
 
 # Print CMake Variables
 #get_cmake_property(_variableNames VARIABLES)
-#list (SORT _variableNames)
-#foreach (_variableName ${_variableNames})
-#    message(STATUS "${_variableName}=${${_variableName}}")
-#endforeach()
+# list (SORT _variableNames)
+# foreach (_variableName ${_variableNames})
+#     message(STATUS "${_variableName}=${${_variableName}}")
+# endforeach()

@@ -11,7 +11,8 @@
 // INCLUDES
 #include <cmath>
 #include <iostream>
-#include "kernel.h"
+#include "skCubSpl.h"
+#include "skGauss.h"
 #include <stdexcept>
 
 
