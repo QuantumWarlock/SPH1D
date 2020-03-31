@@ -3,7 +3,8 @@
 
 ## Linux: SPH1D.x
 
-Recommend "out of source" build.
+I recommend "out of source" builds. This will prevent mixing build artifacts with the code base.
+
 **Release Build:**
 ```bash
 >mkdir build
