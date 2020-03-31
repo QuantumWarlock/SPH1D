@@ -16,9 +16,7 @@
   ***************************************************************************************************/
 
 // System INCLUDES
-#include <cmath>		// C-library math functions
-#include <iomanip>		// Parametric manipulators (formatting)
-#include <iostream>		// Input/Output (streams)
+#include <iostream>
 #include <new>			// Dynamic storage
 #include <string>		// Strings
 
@@ -26,7 +24,6 @@
 #include "constants.h"
 #include "DataOut.h"
 #include "init.h"
-#include "SPH1DConfig.h"
 #include "timeIntegrator.h"
 #include "Timer.h"
 

@@ -3,22 +3,22 @@
  * Class:	Timer
  * Purpose:	Time total program runtime and function calls.
  * Author:	Ryan Clement (RRCC)
- * Date:	March 10, 2020
+ * Date:	March 2020
  *
  ***************************************************************************************************/
-    
+
 
 // INCLUDES
 #include <iostream>
 #include <ctime>
 #include <chrono>   // Sets high_resolution_clock to system_clock
 #include <string>
-    
+
 
 // PRAGMA
-#pragma once  
+#pragma once
 
-    
+
 class Timer {
 private:
 	// Begining and ending system times (time stamps)
@@ -47,5 +47,3 @@ public:
 	// Destructor
 	~Timer();
 };
-    
-

@@ -4,10 +4,10 @@
  * Purpose:	    "Special" Equation Of State for Artifical Compressibility of Water.
  * Reference:   Morris, 1997
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 12, 2020
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
-    
+
 
 // INCLUDES
 #include "waterEOS.h"

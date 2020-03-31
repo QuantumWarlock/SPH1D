@@ -3,7 +3,7 @@
  * Class:	Timer
  * Purpose:	Time total program runtime and function calls.
  * Author:	Ryan Clement (RRCC)
- * Date:	March 10, 2020
+ * Date:	March 2020
  *
  ***************************************************************************************************/
 
@@ -66,4 +66,3 @@ Timer::~Timer()
 {
 
 }
-

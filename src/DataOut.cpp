@@ -3,7 +3,7 @@
  * Class:	    DataOut
  * Purpose:	    Write simulation results to file.
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 10, 2020
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
 

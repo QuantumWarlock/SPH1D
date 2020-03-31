@@ -3,7 +3,7 @@
  * Function:	init
  * Purpose:	    Initialize problem (set-up).
  * Author:	    Ryan Clement (RRCC)
- * Date:	    March 10, 2020
+ * Date:	    March 2020
  *
  ***************************************************************************************************/
 

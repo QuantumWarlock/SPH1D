@@ -3,15 +3,15 @@
  * Class:	DataOut
  * Purpose:	Output simulation results to file.
  * Author:	Ryan Clement (RRCC)
- * Date:	March 10, 2020
+ * Date:	March 2020
  *
  ***************************************************************************************************/
 
 
 // INCLUDES
 #include "constants.h"
-#include <iomanip>
-#include <iostream>
+#include <iomanip>			// Parametric manipulators (formatting)
+#include <iostream>			// Input/Output (streams)
 #include <fstream>
 #include <stdexcept>
 #include <string>

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-project(SPH1D VERSION 0.1.0
+project(SPH1D VERSION 1.0
         DESCRIPTION "Shock Tube"
         LANGUAGES CXX)
 
@@ -8,19 +8,19 @@ project(SPH1D VERSION 0.1.0
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Commented out. Let user specify with flag.
 # Specify the build type
-set(CMAKE_BUILD_TYPE RELEASE)
-set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS_RELEASE})
+#set(CMAKE_BUILD_TYPE Release)
+#set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS_RELEASE})
 
 # Future Testing Capability ...
-include(CTest)
-enable_testing()
+#include(CTest)
+#enable_testing()
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+#set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+#set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+#include(CPack)
 
-configure_file(inc/SPH1DConfig.h.in ../inc/SPH1DConfig.h)
 include_directories(inc)
 set(SOURCES
         src/artVisc.cpp
