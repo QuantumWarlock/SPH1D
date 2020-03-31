@@ -43,7 +43,7 @@ void dtStep(
     int nIP = 0;
     for(auto i=0; i<CON::nTot; i++)
     {
-        die[i] = 0.0;
+        //die[i] = 0.0;
         dieAV[i] = 0.0;
         axAV[i] = 0.0;
         axIF[i] = 0.0;

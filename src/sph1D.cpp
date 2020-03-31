@@ -44,7 +44,7 @@ int main()
 
     // Time Parameters
     double t = 0.0;        // Time [s]
-    double dt = 0.0005;    //Time Step [s]
+    double dt = 0.005;     // Time Step [s]
     double tMax = 0.2;     // Maximum Simulation Time [s] (Simulation stop condition)
 
     // Simulation Arrays
