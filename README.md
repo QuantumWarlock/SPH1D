@@ -14,7 +14,7 @@ Recommend "out of source" build.
 ```
 **Run:**
 ```bash
-./sph.x
+>./sph.x
 ```
 
 ## Windows: SPH1D.exe
@@ -31,19 +31,19 @@ I recommend Visual Studio Code (a.k.a. VS Code) or Visual Studio. I tested both 
 
 **Execute:**
 ```bash
-python3 sphPlot.py -i path/to/SPH1D_Output.txt
+>python3 sphPlot.py -i path/to/SPH1D_Output.txt
 ```
 **Help:**
 ```bash
-python3 sphPlot.py -h
+>python3 sphPlot.py -h
 ```
 or
 ```bash
-python3 sphPlot.py --help
+>python3 sphPlot.py --help
 ```
 
 ### gasEOS.py
 **Execute:**
 ```bash
-python3 gasEOS.py
+>python3 gasEOS.py
 ```
