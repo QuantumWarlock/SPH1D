@@ -5,7 +5,7 @@
 
 **Build:**
 
-Recommend out of source build.
+Recommend "out of source" build. 
 ```bash
 >mkdir build
 >cd build
@@ -21,7 +21,9 @@ Recommend out of source build.
 
 **Build:**
 ```powershell
+Powershell works fine. However, paths can get very long etc...
 ```
+I recommend Visual Studio Code (a.k.a. VS Code) or Visual Studio. I tested both Visual Studio Community 2019 (16.5.1) and VS Code (1.43.2) using Microsoft's Visual C++ compiler. If you are fully committed to Windows then I recommend Visual Studio (and learn to love JSON). If you want work on Linux and Windows I recommend VS Code. 
 
 ## Scripts:
 
