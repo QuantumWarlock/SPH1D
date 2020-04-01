@@ -44,6 +44,12 @@ TBD
 
 ## Scripts:
 
+### sphMovie.py
+```bash
+>python3 sphMovie.py
+```
+Script assumes relative file structure.
+
 ### sphPlot.py
 
 **Execute:**
