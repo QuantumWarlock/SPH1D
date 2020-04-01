@@ -86,7 +86,7 @@ def readFile(fName):
     return nDumps,nPars,times,x,vx,mass,rho,p,ie,xm,dx
 
 
-def plotData(t,x,vx,mass,rho,p,ie,xm,dx):
+def plotAll(t,x,vx,mass,rho,p,ie,xm,dx):
     """
 
 
@@ -116,15 +116,14 @@ def plotData(t,x,vx,mass,rho,p,ie,xm,dx):
     None.
 
     """
-
-    # plt.plot(xm,dx,label='delta-X')
-    # plt.title('Simulation Time = '+t+' s')
-    # plt.xlabel('Position')
-    # plt.ylabel('delta-X')
-    # plt.xlim(-.4,.4)
-    # plt.ylim(-.1,3)
-    # plt.legend()
-    # plt.show()
+    plt.plot(xm,dx,label='delta-X')
+    plt.title('Simulation Time = '+t+' s')
+    plt.xlabel('Position')
+    plt.ylabel('delta-X')
+    plt.xlim(-.4,.4)
+    plt.ylim(-.1,3)
+    plt.legend()
+    plt.show()
     plt.plot(x,vx,label='X-Velocity')
     plt.title('Simulation Time = '+t+' s')
     plt.xlabel('Position')
@@ -133,38 +132,179 @@ def plotData(t,x,vx,mass,rho,p,ie,xm,dx):
     plt.ylim(-.5,1)
     plt.legend()
     plt.show()
-    # plt.plot(x,mass,label='Mass')
-    # plt.title('Simulation Time = '+t+' s')
-    # plt.xlabel('Position')
-    # plt.ylabel('Mass')
-    # plt.xlim(-.4,.4)
-    # plt.ylim(-.1,3)
-    # plt.legend()
-    # plt.show()
-    # plt.plot(x,rho,label='Density')
-    # plt.title('Simulation Time = '+t+' s')
-    # plt.xlabel('Position')
-    # plt.ylabel('Density')
-    # plt.xlim(-.4,.4)
-    # plt.ylim(-.1,3)
-    # plt.legend()
-    # plt.show()
-    # plt.plot(x,p,label='Pressure')
-    # plt.title('Simulation Time = '+t+' s')
-    # plt.xlabel('Position')
-    # plt.ylabel('Pressure')
-    # plt.xlim(-.4,.4)
-    # plt.ylim(-.1,1.2)
-    # plt.legend()
-    # plt.show()
-    # plt.plot(x,ie,label='Internal Energy')
-    # plt.title('Simulation Time = '+t+' s')
-    # plt.xlabel('Position')
-    # plt.ylabel('Internal Energy')
-    # plt.xlim(-.4,.4)
-    # plt.ylim(1,3)
-    # plt.legend()
-    # plt.show()
+    plt.plot(x,mass,label='Mass')
+    plt.title('Simulation Time = '+t+' s')
+    plt.xlabel('Position')
+    plt.ylabel('Mass')
+    plt.xlim(-.4,.4)
+    plt.ylim(-.1,3)
+    plt.legend()
+    plt.show()
+    plt.plot(x,rho,label='Density')
+    plt.title('Simulation Time = '+t+' s')
+    plt.xlabel('Position')
+    plt.ylabel('Density')
+    plt.xlim(-.4,.4)
+    plt.ylim(-.1,3)
+    plt.legend()
+    plt.show()
+    plt.plot(x,p,label='Pressure')
+    plt.title('Simulation Time = '+t+' s')
+    plt.xlabel('Position')
+    plt.ylabel('Pressure')
+    plt.xlim(-.4,.4)
+    plt.ylim(-.1,1.2)
+    plt.legend()
+    plt.show()
+    plt.plot(x,ie,label='Internal Energy')
+    plt.title('Simulation Time = '+t+' s')
+    plt.xlabel('Position')
+    plt.ylabel('Internal Energy')
+    plt.xlim(-.4,.4)
+    plt.ylim(1,3)
+    plt.legend()
+    plt.show()
+
+
+def plotIE(t,x,ie):
+    """
+
+
+    Parameters
+    ----------
+    t : TYPE
+        DESCRIPTION.
+    x : TYPE
+        DESCRIPTION.
+    ie : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
+    plt.plot(x,ie,label='Internal Energy')
+    plt.title('Simulation Time = '+t+' s')
+    plt.xlabel('Position')
+    plt.ylabel('Internal Energy')
+    plt.xlim(-.4,.4)
+    plt.ylim(1,3)
+    plt.legend()
+    plt.show()
+
+
+def plotVEL(t,x,vx):
+    """
+
+
+    Parameters
+    ----------
+    t : TYPE
+        DESCRIPTION.
+    x : TYPE
+        DESCRIPTION.
+    vx : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
+    plt.plot(x,vx,label='X-Velocity')
+    plt.title('Simulation Time = '+t+' s')
+    plt.xlabel('Position')
+    plt.ylabel('Velocity')
+    plt.xlim(-.4,.4)
+    plt.ylim(-.5,1)
+    plt.legend()
+    plt.show()
+
+
+def plotP(t,x,p):
+    """
+
+
+    Parameters
+    ----------
+    t : TYPE
+        DESCRIPTION.
+    x : TYPE
+        DESCRIPTION.
+    p : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
+    plt.plot(x,p,label='Pressure')
+    plt.title('Simulation Time = '+t+' s')
+    plt.xlabel('Position')
+    plt.ylabel('Pressure')
+    plt.xlim(-.4,.4)
+    plt.ylim(-.1,1.2)
+    plt.legend()
+    plt.show()
+
+
+def plotDEN(t,x,rho):
+    """
+
+
+    Parameters
+    ----------
+    t : TYPE
+        DESCRIPTION.
+    x : TYPE
+        DESCRIPTION.
+    rho : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
+    plt.plot(x,rho,label='Density')
+    plt.title('Simulation Time = '+t+' s')
+    plt.xlabel('Position')
+    plt.ylabel('Density')
+    plt.xlim(-.4,.4)
+    plt.ylim(-.1,3)
+    plt.legend()
+    plt.show()
+
+
+def plotDX(t,xm,dx):
+    """
+
+
+    Parameters
+    ----------
+    t : TYPE
+        DESCRIPTION.
+    xm : TYPE
+        DESCRIPTION.
+    dx : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
+    plt.plot(xm,dx,label='delta-X')
+    plt.title('Simulation Time = '+t+' s')
+    plt.xlabel('Position')
+    plt.ylabel('delta-X')
+    plt.xlim(-.4,.4)
+    plt.ylim(-.1,3)
+    plt.legend()
+    plt.show()
+
 
 def getUserOptions():
     """
@@ -204,7 +344,7 @@ def main(args):
     nDumps,nPars,t,x,vx,mass,rho,p,ie,xm,dx = readFile(args.i)
     for i in np.arange(nDumps):
         print("Plotting Time: ",t[i]," s")
-        plotData(t[i],x[i],vx[i],mass[i],rho[i],p[i],ie[i],xm[i],dx[i])
+        plotVEL(t[i],x[i],vx[i])
 
 
 if __name__ == '__main__':
