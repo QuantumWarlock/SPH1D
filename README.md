@@ -1,5 +1,5 @@
 # SPH1D
-1D Smoothed Particle Hydrodynamics C++ code for simulating a classic Shock Tube.
+1D Smoothed Particle Hydrodynamics C++ code for simulating a classic Shock Tube. This code is designed for running on desktops and laptops. It is a relatively small 1D test case. However, it was tested on a HPC (because why not?) and the CMake failed to correctly use the Module environment settings. Instead of wading further into CMake for HPC, I will create a Makefile based build system and code that is designed for both serial and parallel use and create a seperate repository for that project (and create a 2 or 3D code because this 1D which executes in fractions of a second would be silly on HPC resources).  
 
 ## Linux: SPH1D.x
 
